@@ -9,8 +9,8 @@
         </v-avatar>
         Threat Analyzer
       </v-toolbar-title>
-      <v-spacer></v-spacer>
-
+      <v-spacer></v-spacer> <!--push all buttons to righ side-->
+  
       <!-- Dark mode toggle button -->
       <v-btn text @click="toggleDarkMode">
         <v-icon left>{{ isDarkMode ? 'mdi-white-balance-sunny' : 'mdi-weather-night' }}</v-icon>
@@ -136,7 +136,6 @@ export default {
       showLogin: false,
       isDarkMode: true,
       isLoggedIn: false,
-      // Add below two lines here
       showConfirmDialog: false,
       pendingNavigation: null,
     }
@@ -165,6 +164,7 @@ export default {
       }
     },
 
+    //login nahi hai to signin open karo
     handleSimulatorClick() {
       if (!this.isLoggedIn) {
         this.showLogin = true;
@@ -185,7 +185,6 @@ export default {
   }
 },
 
-
     confirmNavigation(agree) {
       this.showConfirmDialog = false;
       if (agree && this.pendingNavigation) {
@@ -204,7 +203,7 @@ export default {
     
   },
   mounted() {
-    // Check if token exists
+    // when we refresh Check if token exists Local storage
     if (localStorage.getItem('token')) {
       this.isLoggedIn = true
     }

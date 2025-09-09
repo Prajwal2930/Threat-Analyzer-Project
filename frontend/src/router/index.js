@@ -44,9 +44,9 @@ const router = new VueRouter({
   routes,
 })
 
-// Navigation Guard to protect routes
+// Navigation Guard to protect routes like middleware
 router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth)
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth) //Checks if target route requires authentication
   const token = localStorage.getItem('token')
 
   if (requiresAuth && !token) {

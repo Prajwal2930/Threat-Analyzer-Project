@@ -20,7 +20,8 @@ router.post('/url', async (req, res) => {
     });
 
     const vtData = response.data.data?.attributes;
-
+    //API se last_analysis_stats & last_analysis_results  count nikalte hai. like malicuius ,clean
+    
     const lastAnalysisStats = vtData?.last_analysis_stats || {};
     const lastAnalysisResults = vtData?.last_analysis_results || {};
 

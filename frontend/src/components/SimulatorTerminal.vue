@@ -1615,7 +1615,7 @@ export default {
             good: 'green',
             risky: 'orange',
             bad: 'red',
-            summary: 'rgba(255, 255, 255, 0.7)' // A more subtle color for general text
+            summary: 'rgba(255, 255, 255, 0.7)' 
         };
         return colors[type] || 'white';
     },

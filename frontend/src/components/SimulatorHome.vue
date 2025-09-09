@@ -34,3 +34,4 @@ export default {
   name: 'SimulatorHome',
 };
 </script>
+  
